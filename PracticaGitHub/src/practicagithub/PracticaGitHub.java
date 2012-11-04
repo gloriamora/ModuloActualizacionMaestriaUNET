@@ -4,7 +4,7 @@
  */
 package practicagithub;
 
-import java.io.IOException;
+import java.io.*;
 
 /**
  *
