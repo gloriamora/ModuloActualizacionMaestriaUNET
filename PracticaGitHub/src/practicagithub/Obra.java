@@ -8,6 +8,53 @@ package practicagithub;
  *
  * @author Gloria
  */
-public class Obra {
+
+
+public class Obra extends Artista {
     
+    private String titulo;
+  private int anoEdicion;
+  private Artista autor;
+
+   
+   public Obra (String titu, int anoE, String nA)
+    {
+      this.anoEdicion=anoE;
+      this.autor.setNombre(nA);
+      this.titulo=titu;
+  }
+  
+   public String getTitulo()
+  {
+   return titulo;
+  }
+   
+    public void setTitulo(String ti)
+  {
+   this.titulo=ti;
+  }
+  
+   public String getAutor()
+  {
+   return autor.nombre;
+  }
+  
+     public void setAutor(String aut)
+  {
+   this.autor=aut;
+  }
+   
+  public int getAnoEdicion()
+  {
+   return anoEdicion;
+  }
+
+  public void setAnoEdicion(int ae)
+  {
+   this.anoEdicion=ae;
+  }
+   
+  
+  
+  
 }

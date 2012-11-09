@@ -24,7 +24,7 @@ public class PracticaGitHub {
     static int numero_artistas;
     static String xNombre;
     static int xAnio;
-
+    static Obra[] obrita;
     /**
      * @param args the command line arguments
      */
@@ -109,7 +109,32 @@ public class PracticaGitHub {
                 
                 break;
            case 2:
-                System.out.println("Modulo en Construcción");    
+                System.out.println("Desa cargar Libro (L) o Disco (D) ");
+                String Ob,Titulo,AutorO;
+                int nob=0,anoA=0;                
+                Ob=lectura.readLine();  
+                obrita = new Obra[500];                 
+                System.out.println("Titulo de la Obra: "); 
+                Titulo=lectura.readLine();  
+                System.out.println("Autor");
+                AutorO=lectura.readLine();  
+                System.out.println("Ano de Edicion");
+                anoA=Integer.parseInt(lectura.readLine());
+                
+                obrita[nob]= new Obra(Titulo, anoA, AutorO);            
+                
+                       
+                if(Ob.equals('L'))
+                    {
+                    
+                    }
+                
+ 
+                if(Ob.equals('D'))
+                    {
+                    
+                    }
+  
                 break;
            case 3:
                 System.out.println("Modulo en Construcción");    

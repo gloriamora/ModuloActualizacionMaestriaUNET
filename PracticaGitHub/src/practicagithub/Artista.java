@@ -16,8 +16,8 @@ public class Artista {
   
   public Artista (String n, int a)
   {
-   setNombre(n);
-   setAnoNacimiento(a);
+   this.nombre=n;
+   this.anoNacimiento=a;
  
   }     
    public int getAnoNacimiento()
