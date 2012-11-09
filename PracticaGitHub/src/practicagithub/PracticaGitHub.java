@@ -6,6 +6,10 @@
  *              García Ysmary  C.I. 14.942.513
  *              Mora Gloria    C.I. 10.164.768
  *              Ordoñez Rosmary C.I.15.028.532 
+ * 
+ * /**
+ *
+ * @author GRUPO DE MODULO DE PROGRAMACION
  */
 package practicagithub;
 
@@ -13,7 +17,7 @@ import java.io.*;
 
 /**
  *
- * @author Administrador
+
  */
 public class PracticaGitHub {
 
