@@ -14,7 +14,7 @@ public class Artista {
   private String nombre;
   private int anoNacimiento;
   
-  public artista (String n, int a)
+  public Artista (String n, int a)
   {
    setNombre(n);
    setAnoNacimiento(a);
