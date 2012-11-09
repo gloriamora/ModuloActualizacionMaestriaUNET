@@ -20,6 +20,10 @@ import java.io.*;
 
  */
 public class PracticaGitHub {
+    static Artista[] xArtistas;
+    static int numero_artistas;
+    static String xNombre;
+    static int xAnio;
 
     /**
      * @param args the command line arguments
@@ -28,7 +32,8 @@ public class PracticaGitHub {
         
         // TODO code application logic here
          BufferedReader lectura = new BufferedReader(new InputStreamReader(System.in));
-    int opcion;
+    int opcion,indice;
+      indice=0;
     do
       {   
         opcion=0;
@@ -58,7 +63,50 @@ public class PracticaGitHub {
         switch(opcion)
          {
            case 1:
-                System.out.println("Modulo en Construcción"); 
+                xArtistas = new Artista[800]; 
+                System.out.println("Indique la cantidad de artistas a cargar: ");
+                numero_artistas =Integer.parseInt(lectura.readLine());
+                int conArt=0;
+                for (int i=0;i<numero_artistas ;i++){
+                xNombre="";
+                xAnio=0;               
+                conArt=conArt+1;
+                do
+                {   
+                System.out.print("Ingrese el Artista "+conArt+ ": ");
+                System.out.print("\n Ingrese Nombre del Artista : ");
+                try
+                    {
+                    xNombre=lectura.readLine();  
+                    }
+                catch (IOException e)
+                    {
+                    System.out.println("Error: Se ha producido un error en la lectura del nombre");          
+                    }    
+                } while(xNombre.equals(""));
+                do
+                {   
+                System.out.print("Ingrese Anio de Nacimiento del Artista : ");      
+                try
+                    {
+                    xAnio=Integer.parseInt(lectura.readLine());  
+                    }
+                catch (IOException e)
+                    {
+                    System.out.println("Error: Se ha producido un error en la lectura del Anio");          
+                    }    
+                catch (NumberFormatException e)
+                    {
+                    System.out.println("Error: Debe ingresar un valor numerico");          
+                    }    
+                }while (xAnio==0);
+                xArtistas[indice]= new Artista(xNombre,xAnio);  
+                System.out.println("Los Datos Registrados del Artista son :"); 
+                System.out.println("Artista : "+xArtistas[indice].getNombre());
+                System.out.println("Anio de Nacimiento del Artista : "+xArtistas[indice].getAnoNacimiento());      
+                indice++;
+               }
+                
                 break;
            case 2:
                 System.out.println("Modulo en Construcción");    
