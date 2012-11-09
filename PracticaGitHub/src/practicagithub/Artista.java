@@ -11,4 +11,32 @@ package practicagithub;
  */
 public class Artista {
     
+  private String nombre;
+  private int anoNacimiento;
+  
+  public artista (String n, int a)
+  {
+   setNombre(n);
+   setAnoNacimiento(a);
+ 
+  }     
+   public int getAnoNacimiento()
+  {
+   return anoNacimiento;
+  }        
+   public void setAnoNacimiento(int a)
+  {
+   this.anoNacimiento=a;   
+  }        
+   public String getNombre()
+  {
+   return nombre;   
+  }        
+   public void setNombre(String n)
+  {
+   this.nombre=n;   
+  }        
+ 
+  
+  
 }
