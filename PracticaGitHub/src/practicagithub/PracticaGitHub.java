@@ -9,7 +9,7 @@
  * 
  * /**
  *
- * @author GRUPO DE MODULO DE PROGRAMACION
+ * @author GRUPO DE MODULO DE PROGRAMACION de la MAESTRIA EN INFORMATICA UNET
  */
 package practicagithub;
 
