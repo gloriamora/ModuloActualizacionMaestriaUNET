@@ -16,6 +16,10 @@ public class Obra {
   private int anoEdicion;
   private Artista autor;
 
+   public Obra()
+  {
+  
+  }
    
    public Obra (String titu, int anoE, String nA)
     {
