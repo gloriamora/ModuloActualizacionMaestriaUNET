@@ -10,12 +10,21 @@ public class Libro extends Obra {
   private int nPaginas;
   private Obra Oautor;
     
-    public Libro(String edit, String titu, String autoR, int aO,int pag)
+    /**
+     *
+     * @param editor
+     * @param titu
+     * @param autoR
+     * @param aO
+     * @param pag
+     */
+    public Libro(String editor, String titu, String autoR, int aO,int pag)
+
     {
-      this.editorial=edit;
+      this.editorial=editor;
       this.Oautor.setTitulo(titu);
-      this.Oautor.setAutor(autoR);
       this.Oautor.setAnoEdicion(aO);
+      this.Oautor.setAutor(autoR);
       this.nPaginas=pag;
   }
   
