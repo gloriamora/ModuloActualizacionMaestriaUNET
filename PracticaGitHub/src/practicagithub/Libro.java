@@ -8,7 +8,7 @@ public class Libro extends Obra {
 
   private String editorial;
   private int nPaginas;
-  private Obra Oautor;
+  //private Obra Oautor;
     
     /**
      *
@@ -22,9 +22,12 @@ public class Libro extends Obra {
 
     {
       this.editorial=editor;
-      this.Oautor.setTitulo(titu);
-      this.Oautor.setAnoEdicion(aO);
-      this.Oautor.setAutor(autoR);
+      //this.Oautor.setTitulo(titu);
+      this.setTitulo(titu);
+       //this.Oautor.setAutor(autoR);
+      this.setAutor(autoR) ;
+      //this.Oautor.setAnoEdicion(aO);
+      this.setAnoEdicion(aO);
       this.nPaginas=pag;
   }
   
