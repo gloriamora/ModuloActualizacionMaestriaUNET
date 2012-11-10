@@ -63,10 +63,11 @@ public class PracticaGitHub {
         switch(opcion)
          {
            case 1:
-                xArtistas = new Artista[800]; 
+               
                 System.out.println("Indique la cantidad de artistas a cargar: ");
                 numero_artistas =Integer.parseInt(lectura.readLine());
                 int conArt=0;
+                xArtistas = new Artista[numero_artistas]; 
                 for (int i=0;i<numero_artistas ;i++){
                 xNombre="";
                 xAnio=0;               
@@ -100,10 +101,13 @@ public class PracticaGitHub {
                     System.out.println("Error: Debe ingresar un valor numerico");          
                     }    
                 }while (xAnio==0);
-                xArtistas[indice]= new Artista(xNombre,xAnio);  
-                System.out.println("Los Datos Registrados del Artista son :"); 
+                xArtistas[indice]= new Artista(xNombre,xAnio); 
+                System.out.println("****************************************"); 
+                System.out.println("Los Datos Registrados del Artista son:"); 
                 System.out.println("Artista : "+xArtistas[indice].getNombre());
                 System.out.println("Anio de Nacimiento del Artista : "+xArtistas[indice].getAnoNacimiento());      
+                System.out.println("****************************************"); 
+                
                 indice++;
                }
                 
