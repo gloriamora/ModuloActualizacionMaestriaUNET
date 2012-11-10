@@ -4,7 +4,7 @@
  */
 package practicagithub;
 
-public class Libro  extends Obra {
+public class Libro extends Obra {
 
   private String editorial;
   private int nPaginas;

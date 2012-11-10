@@ -10,7 +10,7 @@ package practicagithub;
  */
 
 
-public class Obra extends Artista {
+public class Obra {
     
     private String titulo;
   private int anoEdicion;
@@ -36,12 +36,12 @@ public class Obra extends Artista {
   
    public String getAutor()
   {
-   return autor.nombre;
+   return autor.getNombre();
   }
   
      public void setAutor(String aut)
   {
-   this.autor=aut;
+   this.autor.setNombre(aut);
   }
    
   public int getAnoEdicion()
