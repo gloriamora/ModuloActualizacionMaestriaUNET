@@ -24,7 +24,9 @@ public class PracticaGitHub {
     static int numero_artistas;
     static String xNombre;
     static int xAnio;
-    static Obra[] obrita;
+    static Obra[] obritaL;
+    static String Ob="", Titulo, AutorO, editori;
+    static int nob=0, anoA=0,nro_obras=0, con_obras=0,npag=0;
     /**
      * @param args the command line arguments
      */
@@ -113,33 +115,133 @@ public class PracticaGitHub {
                 
                 break;
            case 2:
+                                do
+                {   
                 System.out.println("Desea cargar Libro (L) o Disco (D) ");
-                String Ob,Titulo,AutorO;
-                int nob=0,anoA=0;                
-                Ob=lectura.readLine();  
-                obrita = new Obra[500];                 
-                System.out.println("Titulo de la Obra: "); 
-                Titulo=lectura.readLine();  
-                System.out.println("Autor");
-                AutorO=lectura.readLine();  
+                try
+                    {
+                      Ob=lectura.readLine();  
+                    }
+                catch (IOException e)
+                    {
+                    System.out.println("Error: Se ha producido un error en la lectura del valor ingresado ");          
+                    }    
+                
+                } while(Ob.equals("") || (!Ob.equalsIgnoreCase("L") && !Ob.equalsIgnoreCase("D")) );
+                
+                do
+                {   
+                  System.out.println("Cuantas va a registrar?? ");
+                  try
+                    {
+                      nro_obras=Integer.parseInt(lectura.readLine());  
+                    }
+                catch (IOException e)
+                    {
+                    System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                    }    
+                catch (NumberFormatException e)
+                    {
+                    System.out.println("Error: Debe ingresar un valor numerico");          
+                    }    
+                }while (nro_obras==0);
+                if(Ob.equalsIgnoreCase("L")) {
+              obritaL = new Libro[nro_obras];
+          }
+             
+                
+                con_obras=0;
+                for (int j=0;j<nro_obras;j++){
+                Titulo="";
+                AutorO="";
+                anoA=0;
+                editori="";
+                con_obras=con_obras+1;
+                
+                     System.out.print("Ingrese Datos del registro "+con_obras+ ": ");                
+                     do
+                     {
+                     System.out.println("\n Titulo: "); 
+                     try
+                     {
+                      Titulo=lectura.readLine();  
+                     }
+                     catch (IOException e)
+                     {
+                     System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                     }    
+                    }while(Titulo.equals(""));
+                
+                System.out.println("Los Autores existentes son: ");
+                
+                int totart=xArtistas.length,Secuen=0;
+                for (int o=0;o<totart;o++)
+                {                   
+                    Secuen=Secuen+1;
+                     System.out.println(xArtistas[o].getNombre()+"------>"+Secuen);
+                }
+                System.out.println("Seleccione el autor por el numero que lo identifica");
+                
+                int posActor=0;
+                posActor=Integer.parseInt(lectura.readLine());
+                AutorO=xArtistas[posActor-1].getNombre();  
+                System.out.println("El autor Seleccionado es : "+AutorO);                
+                
+                do
+                {
                 System.out.println("Ano de Edicion");
+                try
+                {
                 anoA=Integer.parseInt(lectura.readLine());
-                
-                obrita[nob]= new Obra(Titulo, anoA, AutorO);            
-                
-                       
-                if(Ob.equals('L'))
+                }
+                catch (IOException e)
                     {
-                    
-                    }
-                
- 
-                if(Ob.equals('D'))
+                    System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                    }    
+                catch (NumberFormatException e)
                     {
-                    
-                    }
-  
-                break;
+                    System.out.println("Error: Debe ingresar un valor numerico");          
+                    }    
+                }while (anoA==0);
+
+                   if(Ob.equalsIgnoreCase("L"))
+                    {
+                     do
+                     {
+                     System.out.println("\n Editorial: "); 
+                     try
+                     {
+                      editori=lectura.readLine();  
+                     }
+                     catch (IOException e)
+                     {
+                     System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                     }    
+                    }while(editori.equals(""));
+                     
+                do
+                {
+                System.out.println("Nro de Paginas");
+                try
+                {
+                npag=Integer.parseInt(lectura.readLine());
+                }
+                catch (IOException e)
+                    {
+                    System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                    }    
+                catch (NumberFormatException e)
+                    {
+                    System.out.println("Error: Debe ingresar un valor numerico");          
+                    }    
+                }while (npag==0);
+                
+                obritaL[j] = new Libro(editori, Titulo, AutorO, anoA,npag);
+               }
+               }
+
+               
+ break;
            case 3:
                 System.out.println("Modulo en Construcción");    
                 break;
