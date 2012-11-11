@@ -430,9 +430,8 @@ public class PracticaGitHub {
                  }
              
                      break;
-           case 3:
-                
-               do
+           case 3:             
+                do
                     {
                     System.out.println("\n Cuantas peliculas va a registrar?? : ");
                     try
@@ -448,8 +447,11 @@ public class PracticaGitHub {
                         System.out.println("Error: Debe ingresar un valor numerico");          
                         }    
                     }while (nro_peliculas==0);
-                    
-                    System.out.println("Los Autores existentes son: ");
+                
+                int con_pelis=0, can_inter=0, pelis=0;
+                for(int jPel=0;jPel<nro_peliculas;jPel++){
+                    pelis=jPel+1;
+                  System.out.println("Cargue el Autor Para la Pelicula: "+pelis);
                 
                 int totart=xArtistas.length,Secuen=0;
                 for (int o=0;o<totart;o++)
@@ -462,7 +464,8 @@ public class PracticaGitHub {
                 int posActorP=0;
                 posActorP=Integer.parseInt(lectura.readLine());
                 AutorP=xArtistas[posActorP-1].getNombre();  
-                System.out.println("El autor Seleccionado es : "+AutorP);   
+                System.out.println("El autor Seleccionado es : "+AutorP);                
+                }
                 break;
                
            case 4:
@@ -475,8 +478,7 @@ public class PracticaGitHub {
                 System.out.println("La opcion no es valida");                
          }   
      }while(opcion!=5);  
-   
-            
+         
                
         
     }
