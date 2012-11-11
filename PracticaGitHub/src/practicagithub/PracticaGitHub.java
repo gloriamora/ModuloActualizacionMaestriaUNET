@@ -20,14 +20,15 @@ import java.io.*;
 
  */
 public class PracticaGitHub {
-    static Artista[] xArtistas;
+   static Artista[] xArtistas;
     static int numero_artistas;
     static String xNombre;
     static int xAnio;
     static Libro[] obritaL;
     static Disco[] obritaD;
+    static Pelicula[] obritaP;
     static String Ob="", Titulo, AutorO, editori,discogra, busquedad="", productor, AutorP;
-    static int nob=0, anoA=0,nro_obras=0, con_obras=0,npag=0 , ncanc=0, nro_peliculas=0, opcrepor=0;    
+    static int nob=0, anoA=0,  nro_obras=0, con_obras=0,npag=0 , ncanc=0, nro_peliculas=0, anoP=0, opcrepor=0; 
     /**
      * @param args the command line arguments
      */
@@ -357,8 +358,9 @@ public class PracticaGitHub {
                        }
                          
                     }
-                    if (sw!=1)
-                      System.out.println("\n Los datos buscados no se encuentran cargados");
+                    if (sw!=1) {
+                         System.out.println("\n Los datos buscados no se encuentran cargados");
+                     }
                     }//busqueda del libro con la consulta editorial y paginas
                  
                  
@@ -426,8 +428,9 @@ public class PracticaGitHub {
                        }
                         
                     }
-                    if (sw!=1)
-                      System.out.println("\n Los datos buscados no se encuentran cargados");
+                    if (sw!=1) {
+                         System.out.println("\n Los datos buscados no se encuentran cargados");
+                     }
              
                  }
              
@@ -451,7 +454,7 @@ public class PracticaGitHub {
                     }while (nro_peliculas==0);
                 
                 int con_pelis=0, can_inter=0, pelis=0;
-                for(int jPel=0;jPel<nro_peliculas;jPel++){
+                 for(int jPel=0;jPel<nro_peliculas;jPel++){
                     pelis=jPel+1;
                   System.out.println("Cargue el Autor Para la Pelicula: "+pelis);
                 
@@ -467,9 +470,97 @@ public class PracticaGitHub {
                 posActorP=Integer.parseInt(lectura.readLine());
                 AutorP=xArtistas[posActorP-1].getNombre();  
                 System.out.println("El autor Seleccionado es : "+AutorP);                
+              
+                 do
+                {
+                System.out.println("Ano de Edicion");
+                try
+                {
+                anoP=Integer.parseInt(lectura.readLine());
                 }
+                catch (IOException e)
+                    {
+                    System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                    }    
+                catch (NumberFormatException e)
+                    {
+                    System.out.println("Error: Debe ingresar un valor numerico");          
+                    }    
+                }while (anoP==0);
+                    
+                
+                   productor="";
+                   con_pelis=con_pelis+1;
+                   System.out.println("\n Ingrese Datos del registro "+con_pelis+ ":");
+                    do
+                     {
+                     System.out.println("\n Titulo: "); 
+                     try
+                     {
+                      Titulo=lectura.readLine();  
+                     }
+                     catch (IOException e)
+                     {
+                     System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                     }    
+                    }while(Titulo.equals(""));
+                   do
+                    {
+                    System.out.println("\n Productora: ");
+                    try
+                    {
+                    productor=lectura.readLine();
+                    }
+                    catch (IOException e)
+                        {
+                        System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                        }    
+                    catch (NumberFormatException e)
+                        {
+                        System.out.println("Error: Debe ingresar un valor numerico");          
+                        }    
+                    }while (productor.equals(""));
+                   
+                
+                   do
+                    {
+                    System.out.println("\n Ingrese el numero de interpretes: ");
+                    try
+                    {
+                    can_inter=Integer.parseInt(lectura.readLine());
+                    }
+                    catch (IOException e)
+                        {
+                        System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                        }    
+                    catch (NumberFormatException e)
+                        {
+                        System.out.println("Error: Debe ingresar un valor numerico");          
+                        }    
+                    }while (can_inter==0);
+                   Artista [] inter = new Artista[can_inter]; 
+                   Pelicula [] obritaP= new Pelicula [nro_peliculas]; 
+                for (int oA=0;oA<can_inter;oA++)
+                {
+                    inter [oA] = new Artista(); 
+                    System.out.println("Los Autores existentes son: ");
+                    int totartP=xArtistas.length,SecuenP=0;
+                    for (int o1P=0;o1P<totartP;o1P++)
+                    {                   
+                        SecuenP=SecuenP+1; 
+                        System.out.println(xArtistas[o1P].getNombre()+"------>"+SecuenP);
+                    }
+                    int posActor1=0;
+                    System.out.println("Seleccione el autor por el numero que lo identifica");
+                    posActor1=Integer.parseInt(lectura.readLine());
+                    System.out.println("El autor Seleccionado es : "+xArtistas[posActor1-1].getNombre());                
+                    inter[oA].setNombre(xArtistas[posActor1-1].getNombre()); 
+                 }
+                //aquiiiiiiiiiiiiiiiiiiiiiiiiii
+                obritaP[jPel] = new Pelicula (Titulo, AutorP, anoP, productor,inter);
+                //
+               }
                 break;
-               
            case 4:
                 menuReportes();
                break;
