@@ -568,6 +568,7 @@ public class PracticaGitHub {
                     {                   
                        SecuenP=SecuenP+1;
                        System.out.println("Pelicula "+obritaP[Z].getTitulo()+"----->"+SecuenP);                     
+                       
                     }
                     System.out.println("\n Seleccione el titulo de la pelicula a busca por el numero que lo indica ");
                     int posPelicu=0;
@@ -576,12 +577,12 @@ public class PracticaGitHub {
                     System.out.println("Los Datos del pelicula son:");
                     System.out.println("Titulo "+obritaP[posPelicu-1].getTitulo()+" Autor "+obritaP[posPelicu-1].getAutor()+" Productora "+obritaP[posPelicu-1].getProductora());                 
                     
-                    for (int Z=0;Z<obritaP[posPelicu-1].getInterpretes().length;Z++)
+                         for (int Z1=0;Z1<obritaP[posPelicu-1].getInterpretes().length;Z1++)
                     {                   
                      System.out.println("Los Datos Interprete son:");
-                     System.out.println("Titulo "+obritaP[posPelicu-1].getInterpretes().toString());
-                    }
+                     System.out.println("Titulo "+obritaP[Z1].getInterpretes()[Z1].getNombre());
                     
+                    }
                     System.out.println("************************\n");
                  
                     System.out.println("\n*************************************");
@@ -609,7 +610,13 @@ public class PracticaGitHub {
                        if(obritaP[Z].getProductora().equals(Conpro))
                        {    
                            System.out.println("Encontro el registro en la posicion "+SecuenBP+" el registro es: "); 
-                           System.out.println("Titulo "+obritaP[Z].getTitulo()+" Autor "+obritaP[Z].getAutor()+" Productora "+obritaP[Z].getProductora()+" Interpretes "+obritaP[Z].getInterpretes());                 
+                           System.out.println("Titulo "+obritaP[Z].getTitulo()+" Autor "+obritaP[Z].getAutor()+" Productora "+obritaP[Z].getProductora());                 
+                           for (int Z1=0;Z1<obritaP[Z].getInterpretes().length;Z1++)
+                    {                   
+                     System.out.println("Los Datos Interprete son:");
+                     System.out.println("Titulo "+obritaP[Z1].getInterpretes()[Z1].getNombre());
+                    
+                    }
                            swP=1;
                        }
                          
@@ -694,6 +701,12 @@ public class PracticaGitHub {
                 {
                     System.out.println("Informacion Del Registro");
                        obritaP[Z].imprimir();
+                            for (int Z1=0;Z1<obritaP[Z].getInterpretes().length;Z1++)
+                    {                   
+                     System.out.println("Los Datos Interprete son:");
+                     System.out.println("Titulo "+obritaP[Z1].getInterpretes()[Z1].getNombre());
+                    
+                    }
                        System.out.println("------------------------------------");
                 }
                 break;
@@ -769,7 +782,13 @@ public class PracticaGitHub {
                        if(obritaP[Z].getAutor().equals(nombreAutor))
                        {    
                            System.out.println("Encontro el registro en la posicion "+SeBP+" el registro es: "); 
-                           System.out.println("El Titulo de la pelicula es "+obritaP[Z].getTitulo()+" Autor "+obritaP[Z].getAutor()+" Productora "+obritaP[Z].getProductora()+" Interpretes "+obritaP[Z].getInterpretes());                 
+                           System.out.println("El Titulo de la pelicula es "+obritaP[Z].getTitulo()+" Autor "+obritaP[Z].getAutor()+" Productora "+obritaP[Z].getProductora());
+                           for (int Z1=0;Z1<obritaP[Z].getInterpretes().length;Z1++)
+                    {                   
+                     System.out.println("Los Datos Interprete son:");
+                     System.out.println("Titulo "+obritaP[Z1].getInterpretes()[Z1].getNombre());
+                    
+                    }
                            sP=1;
                        }
                          
