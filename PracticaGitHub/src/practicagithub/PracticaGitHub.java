@@ -759,7 +759,7 @@ public class PracticaGitHub {
                       System.out.println("\n Los datos buscados no se encuentran cargados");
                     break;
             }  
-            case 4:
+            case 4: 
                 {
                  String nombreAutor="";                
                  do
