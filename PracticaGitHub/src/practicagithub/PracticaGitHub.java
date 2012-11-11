@@ -431,7 +431,8 @@ public class PracticaGitHub {
              
                      break;
            case 3:
-                do
+                
+               do
                     {
                     System.out.println("\n Cuantas peliculas va a registrar?? : ");
                     try
