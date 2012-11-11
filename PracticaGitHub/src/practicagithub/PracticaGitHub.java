@@ -90,14 +90,14 @@ public class PracticaGitHub {
                 } while(xNombre.equals(""));
                 do
                 {   
-                System.out.print("Ingrese Anio de Nacimiento del Artista : ");      
+                System.out.print("Ingrese Año de Nacimiento del Artista : ");      
                 try
                     {
                     xAnio=Integer.parseInt(lectura.readLine());  
                     }
                 catch (IOException e)
                     {
-                    System.out.println("Error: Se ha producido un error en la lectura del Anio");          
+                    System.out.println("Error: Se ha producido un error en la lectura del Año");          
                     }    
                 catch (NumberFormatException e)
                     {
@@ -108,7 +108,7 @@ public class PracticaGitHub {
                 System.out.println("****************************************"); 
                 System.out.println("Los Datos Registrados del Artista son:"); 
                 System.out.println("Artista : "+xArtistas[indice].getNombre());
-                System.out.println("Anio de Nacimiento del Artista : "+xArtistas[indice].getAnoNacimiento());      
+                System.out.println("Año de Nacimiento del Artista : "+xArtistas[indice].getAnoNacimiento());      
                 System.out.println("****************************************"); 
                 
                 indice++;
@@ -118,7 +118,7 @@ public class PracticaGitHub {
            case 2:
                                 do
                 {   
-                System.out.println("Desea cargar Libro (L) o Disco (D) ");
+                System.out.println("Desea cargar un Libro (L) o un Disco (D) ");
                 try
                     {
                       Ob=lectura.readLine();  
@@ -132,7 +132,7 @@ public class PracticaGitHub {
                 
                 do
                 {   
-                  System.out.println("Cuantas va a registrar?? ");
+                  System.out.println("¿Cuantas va a registrar? ");
                   try
                     {
                       nro_obras=Integer.parseInt(lectura.readLine());  
@@ -193,7 +193,7 @@ public class PracticaGitHub {
                 
                 do
                 {
-                System.out.println("Ano de Edicion");
+                System.out.println("Año de Edición");
                 try
                 {
                 anoA=Integer.parseInt(lectura.readLine());
@@ -293,7 +293,7 @@ public class PracticaGitHub {
                         
                  if(busquedad.equalsIgnoreCase("L"))       
                  {                        
-                    System.out.println("Los libros registrados son ");
+                    System.out.println("Los libros registrados son: ");
                     int Secuen1=0;
                     for (int Z=0;Z<obritaL.length;Z++)
                     {                   
@@ -315,7 +315,7 @@ public class PracticaGitHub {
                     int nPagB=0;                    
                      do
                      {
-                     System.out.println("\n Ingrese La Editorial: "); 
+                     System.out.println("\n Ingrese la Editorial: "); 
                      try
                      {
                       Cedito=lectura.readLine();  
@@ -362,7 +362,7 @@ public class PracticaGitHub {
                  
                   if(busquedad.equalsIgnoreCase("D"))       
                  {                        
-                    System.out.println("Los Discos registrados son ");
+                    System.out.println("Los Discos registrados son: ");
                     int Secuen1=0;
                     for (int Z=0;Z<obritaD.length;Z++)
                     {                   
