@@ -26,8 +26,8 @@ public class PracticaGitHub {
     static int xAnio;
     static Libro[] obritaL;
     static Disco[] obritaD;
-    static String Ob="", Titulo, AutorO, editori,discogra, busquedad="";
-    static int nob=0, anoA=0,nro_obras=0, con_obras=0,npag=0 , ncanc=0;     
+    static String Ob="", Titulo, AutorO, editori,discogra, busquedad="", productor, AutorP;
+    static int nob=0, anoA=0,nro_obras=0, con_obras=0,npag=0 , ncanc=0, nro_peliculas=0;     
     /**
      * @param args the command line arguments
      */
@@ -383,7 +383,37 @@ public class PracticaGitHub {
                }//Fin del for
                      break;
            case 3:
-                System.out.println("Modulo en Construcción");    
+                do
+                    {
+                    System.out.println("\n Cuantas peliculas va a registrar?? : ");
+                    try
+                    {
+                    nro_peliculas=Integer.parseInt(lectura.readLine());
+                    }
+                    catch (IOException e)
+                        {
+                        System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                        }    
+                    catch (NumberFormatException e)
+                        {
+                        System.out.println("Error: Debe ingresar un valor numerico");          
+                        }    
+                    }while (nro_peliculas==0);
+                    
+                    System.out.println("Los Autores existentes son: ");
+                
+                int totart=xArtistas.length,Secuen=0;
+                for (int o=0;o<totart;o++)
+                {                   
+                    Secuen=Secuen+1;
+                     System.out.println(xArtistas[o].getNombre()+"------>"+Secuen);
+                }
+                System.out.println("Seleccione el autor por el numero que lo identifica");
+                
+                int posActorP=0;
+                posActorP=Integer.parseInt(lectura.readLine());
+                AutorP=xArtistas[posActorP-1].getNombre();  
+                System.out.println("El autor Seleccionado es : "+AutorP);   
                 break;
            case 4:
                 System.out.println("Modulo en Construcción");    
