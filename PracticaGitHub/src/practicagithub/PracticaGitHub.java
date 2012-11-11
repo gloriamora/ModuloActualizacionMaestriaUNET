@@ -307,6 +307,58 @@ public class PracticaGitHub {
                     System.out.println("Los Datos del libro son:");
                     System.out.println("Titulo "+obritaL[posLibro-1].getTitulo()+" Autor "+obritaL[posLibro-1].getAutor()+" Editorial "+obritaL[posLibro-1].getEditorial()+" Nro Paginas "+obritaL[posLibro-1].getNPaginas());                 
                     System.out.println("************************\n");
+                    System.out.println("Consultar Editorial y Nro de Paginas ");
+                    System.out.println("*************************************");
+                    
+                    String Cedito="";
+                    int nPagB=0;                    
+                     do
+                     {
+                     System.out.println("\n Ingrese La Editorial: "); 
+                     try
+                     {
+                      Cedito=lectura.readLine();  
+                     }
+                     catch (IOException e)
+                     {
+                     System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                     }    
+                    }while(Cedito.equals(""));
+                     
+                    do
+                    {
+                    System.out.println("\n Ingrese el Nro Paginas: ");
+                    try
+                    {
+                    nPagB=Integer.parseInt(lectura.readLine());
+                    }
+                    catch (IOException e)
+                        {
+                        System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                        }    
+                    catch (NumberFormatException e)
+                        {
+                        System.out.println("Error: Debe ingresar un valor numerico");          
+                        }    
+                    }while (nPagB==0);
+                    
+                    int sw=0,Secuen=0;
+                    for (int Z=0;Z<obritaL.length;Z++)
+                    {                    
+                       Secuen=Secuen+1;
+                       if(obritaL[Z].getEditorial().equals(Cedito) && obritaL[Z].getNPaginas()==nPagB)
+                       {    
+                           System.out.println("Encontro el registro en la posicion "+Secuen+" el registro es: "); 
+                           System.out.println("Titulo "+obritaL[Z].getTitulo()+" Autor "+obritaL[Z].getAutor()+" Editorial "+obritaL[Z].getEditorial()+" Nro Paginas "+obritaL[Z].getNPaginas());                 
+                           sw=1;
+                       }
+                         
+                    }
+                    if (sw!=1)
+                      System.out.println("\n Los datos buscados no se encuentran cargados");
+                    
+                 }
+                    
                  }
                }//Fin del for
  break;
@@ -323,8 +375,8 @@ public class PracticaGitHub {
                 System.out.println("La opcion no es valida");                
          }   
      }while(opcion!=5);  
-      
-               
+   
+            
                
         
     }
