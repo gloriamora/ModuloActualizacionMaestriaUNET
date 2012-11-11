@@ -699,10 +699,86 @@ public class PracticaGitHub {
                 break;
             }
           
+            
             case 3:
-                break;
+            {
+                String nombreAutor="";                
+                 do
+                    {
+                    System.out.println("\n Ingrese el nombre del autor: ");
+                    try
+                    {
+                    nombreAutor=lectura.readLine();
+                    }
+                    catch (IOException e)
+                        {
+                        System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                        }    
+                    }while (nombreAutor.equals(""));
+                    
+                    int sL=0,SeBL=0,sD=0,SeBD=0;
+                    for (int Z=0;Z<obritaL.length;Z++)
+                    {                    
+                       SeBL=SeBL+1;
+                       if(obritaL[Z].getAutor().equals(nombreAutor))
+                       {    
+                           System.out.println("Encontro el registro en la posicion "+SeBL+" el registro es: "); 
+                           System.out.println("El Titulo del Libro es "+obritaL[Z].getTitulo()+" Autor "+obritaL[Z].getAutor()+" Editorial "+obritaL[Z].getEditorial()+" Nro Paginas "+obritaL[Z].getNPaginas());                 
+                           sL=1;
+                       }
+                         
+                    }
+                    if (sL!=1)
+                      System.out.println("\n Los datos buscados no se encuentran cargados en libros ");
+
+                    for (int Z=0;Z<obritaD.length;Z++)
+                    {                    
+                       SeBD=SeBD+1;
+                       if(obritaD[Z].getAutor().equals(nombreAutor))
+                       {    
+                           System.out.println("Encontro el registro en la posicion "+SeBD+" el registro es: "); 
+                           System.out.println("El Titulo del Disco es "+obritaD[Z].getTitulo()+" Autor "+obritaD[Z].getAutor()+" Discografia "+obritaD[Z].getDiscografia()+" Nro Canciones "+obritaD[Z].getDiscografia());                 
+                           sD=1;
+                       }
+                         
+                    }
+                    if (sD!=1)
+                      System.out.println("\n Los datos buscados no se encuentran cargados");
+                    break;
+            }  
             case 4:
-                break;
+                {
+                 String nombreAutor="";                
+                 do
+                  {
+                    System.out.println("\n Ingrese el nombre del autor de la pelicula: ");
+                    try
+                    {
+                    nombreAutor=lectura.readLine();
+                    }
+                    catch (IOException e)
+                        {
+                        System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                        }    
+                   }while (nombreAutor.equals(""));
+                    
+                    int sP=0,SeBP=0;
+                    for (int Z=0;Z<obritaP.length;Z++)
+                    {                    
+                       SeBP=SeBP+1;
+                       if(obritaP[Z].getAutor().equals(nombreAutor))
+                       {    
+                           System.out.println("Encontro el registro en la posicion "+SeBP+" el registro es: "); 
+                           System.out.println("El Titulo de la pelicula es "+obritaP[Z].getTitulo()+" Autor "+obritaP[Z].getAutor()+" Productora "+obritaP[Z].getProductora()+" Interpretes "+obritaP[Z].getInterpretes());                 
+                           sP=1;
+                       }
+                         
+                    }
+                    if (sP!=1)
+                      System.out.println("\n Los datos buscados no se encuentran cargados en libros ");
+
+                   break;
+                }
             case 5:
             {
                 menuP();
