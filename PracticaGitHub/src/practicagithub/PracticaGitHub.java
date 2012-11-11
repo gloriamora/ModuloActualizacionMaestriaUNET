@@ -24,9 +24,9 @@ public class PracticaGitHub {
     static int numero_artistas;
     static String xNombre;
     static int xAnio;
-    static Obra[] obritaL;
+    static Libro[] obritaL;
     static Disco[] obritaD;
-    static String Ob="", Titulo, AutorO, editori,discogra;
+    static String Ob="", Titulo, AutorO, editori,discogra, busquedad="";
     static int nob=0, anoA=0,nro_obras=0, con_obras=0,npag=0 , ncanc=0;     
     /**
      * @param args the command line arguments
@@ -277,9 +277,38 @@ public class PracticaGitHub {
                     }
                
                    
+            
+                do
+                 {
+                   System.out.println("Que desea buscar Libros(L) o Discos(D) ");
+                   try
+                   {
+                     busquedad=lectura.readLine();  
+                   }
+                   catch (IOException e)
+                   {
+                     System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                   }    
+                 }while(busquedad.equals(""));
+                        
+                 if(busquedad.equalsIgnoreCase("L"))       
+                 {                        
+                    System.out.println("Los libros registrados son ");
+                    int Secuen1=0;
+                    for (int Z=0;Z<obritaL.length;Z++)
+                    {                   
+                       Secuen1=Secuen1+1;
+                       System.out.println("Libro "+obritaL[Z].getTitulo()+"----->"+Secuen1);  
+                    }
+                    System.out.println("\n Seleccione el titulo del libro a busca por el numero que lo indica ");
+                    int posLibro=0;
+                    posLibro=Integer.parseInt(lectura.readLine());
+                    System.out.println("************************");
+                    System.out.println("Los Datos del libro son:");
+                    System.out.println("Titulo "+obritaL[posLibro-1].getTitulo()+" Autor "+obritaL[posLibro-1].getAutor()+" Editorial "+obritaL[posLibro-1].getEditorial()+" Nro Paginas "+obritaL[posLibro-1].getNPaginas());                 
+                    System.out.println("************************\n");
+                 }
                }//Fin del for
-
-               
  break;
            case 3:
                 System.out.println("Modulo en Construcción");    

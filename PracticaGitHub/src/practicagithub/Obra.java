@@ -14,7 +14,7 @@ public class Obra {
     
     private String titulo;
   private int anoEdicion;
-  private Artista autor;
+  private Artista autor = new Artista();
 
    public Obra()
   {
