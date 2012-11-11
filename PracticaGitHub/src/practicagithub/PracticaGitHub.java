@@ -277,7 +277,7 @@ public class PracticaGitHub {
                     }
                
                    
-            
+            }
                 do
                  {
                    System.out.println("Que desea buscar Libros(L) o Discos(D) ");
@@ -376,11 +376,59 @@ public class PracticaGitHub {
                     System.out.println("Los Datos del disco son: ");
                     System.out.println("Titulo "+obritaD[posDisco-1].getTitulo()+" Autor "+obritaD[posDisco-1].getAutor()+" Discografia "+obritaD[posDisco-1].getDiscografia()+" Nro Canciones "+obritaD[posDisco-1].getNCanciones());                 
                     System.out.println("************************\n");
-                 
-                 }//fin de buscar disco con consulta discografia y canciones
-                 
-                 
-               }//Fin del for
+                                     System.out.println("\n*************************************");
+                    System.out.println("Consultar Discografia y Nro de Canciones ");
+                    System.out.println("*************************************");
+                    
+                    String Cedito="";
+                    int nDisB=0;                    
+                     do
+                     {
+                     System.out.println("\n Ingrese La Discografia: "); 
+                     try
+                     {
+                      Cedito=lectura.readLine();  
+                     }
+                     catch (IOException e)
+                     {
+                     System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                     }    
+                    }while(Cedito.equals(""));
+                     
+                    do
+                    {
+                    System.out.println("\n Ingrese el Nro Canciones: ");
+                    try
+                    {
+                    nDisB=Integer.parseInt(lectura.readLine());
+                    }
+                    catch (IOException e)
+                        {
+                        System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                        }    
+                    catch (NumberFormatException e)
+                        {
+                        System.out.println("Error: Debe ingresar un valor numerico");          
+                        }    
+                    }while (nDisB==0);
+                    
+                    int sw=0,Secu=0;
+                    for (int Z=0;Z<obritaD.length;Z++)
+                    {                    
+                       Secu=Secu+1;
+                       if(obritaD[Z].getDiscografia().equals(Cedito) && obritaD[Z].getNCanciones()==nDisB)
+                       {
+                           System.out.println("Encontro el registro en la posicion "+Secu+" el registro es: "); 
+                           System.out.println("Titulo "+obritaD[Z].getTitulo()+" Autor "+obritaD[Z].getAutor()+" Discografia "+obritaD[Z].getDiscografia()+" Nro Discografia "+obritaD[Z].getNCanciones());                 
+                           sw=1;
+                       }
+                        
+                    }
+                    if (sw!=1)
+                      System.out.println("\n Los datos buscados no se encuentran cargados");
+             
+                 }
+             
                      break;
            case 3:
                 System.out.println("Modulo en Construcción");    
