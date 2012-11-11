@@ -16,6 +16,16 @@ public class Pelicula extends Obra{
     {
     }
     
+public Pelicula (String titu, String Autor, int aEd, String Prod, Artista[] inter)
+{
+      this.setTitulo(titu);
+      this.setAutor(Autor);
+      this.setAnoEdicion(aEd);
+      this.productora=Prod;
+      this.interpretes=inter;
+}
+
+
 public Artista[] getInterpretes()
 {
 return interpretes;
@@ -36,7 +46,14 @@ public void setProductora(String productor)
 this.productora=productor;
 }     
 
-
+public void imprimir()
+{
+ System.out.println(" Titulo "+this.getTitulo());
+ System.out.println(" Autor "+this.getAutor());
+ System.out.println(" Año de Edicion "+this.getAnoEdicion());   
+ System.out.println(" Productora "+productora);
+ System.out.println(" Interpretes "+interpretes);
+}
     
 }
 
