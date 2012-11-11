@@ -52,7 +52,7 @@ public void imprimir()
  System.out.println(" Autor "+this.getAutor());
  System.out.println(" Año de Edicion "+this.getAnoEdicion());   
  System.out.println(" Productora "+productora);
- System.out.println(" Interpretes "+interpretes);
+ 
 }
     
 }
