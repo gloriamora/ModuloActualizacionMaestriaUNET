@@ -6,7 +6,7 @@ package practicagithub;
 
 /**
  *
- * @author Maiguel
+ * @author Maiguel Garcia
  */
 
 
