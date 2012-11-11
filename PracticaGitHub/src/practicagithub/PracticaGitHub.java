@@ -580,7 +580,7 @@ public class PracticaGitHub {
                          for (int Z1=0;Z1<obritaP[posPelicu-1].getInterpretes().length;Z1++)
                     {                   
                      System.out.println("Los Datos Interprete son:");
-                     System.out.println("Titulo "+obritaP[Z1].getInterpretes()[Z1].getNombre());
+                     System.out.println("Titulo "+obritaP[posPelicu-1].getInterpretes()[Z1].getNombre());
                     
                     }
                     System.out.println("************************\n");
@@ -614,7 +614,7 @@ public class PracticaGitHub {
                            for (int Z1=0;Z1<obritaP[Z].getInterpretes().length;Z1++)
                     {                   
                      System.out.println("Los Datos Interprete son:");
-                     System.out.println("Titulo "+obritaP[Z1].getInterpretes()[Z1].getNombre());
+                     System.out.println("Titulo "+obritaP[Z].getInterpretes()[Z1].getNombre());
                     
                     }
                            swP=1;
@@ -704,7 +704,7 @@ public class PracticaGitHub {
                             for (int Z1=0;Z1<obritaP[Z].getInterpretes().length;Z1++)
                     {                   
                      System.out.println("Los Datos Interprete son:");
-                     System.out.println("Titulo "+obritaP[Z1].getInterpretes()[Z1].getNombre());
+                     System.out.println("Titulo "+obritaP[Z].getInterpretes()[Z1].getNombre());
                     
                     }
                        System.out.println("------------------------------------");
@@ -786,7 +786,7 @@ public class PracticaGitHub {
                            for (int Z1=0;Z1<obritaP[Z].getInterpretes().length;Z1++)
                     {                   
                      System.out.println("Los Datos Interprete son:");
-                     System.out.println("Titulo "+obritaP[Z1].getInterpretes()[Z1].getNombre());
+                     System.out.println("Titulo "+obritaP[Z].getInterpretes()[Z1].getNombre());
                     
                     }
                            sP=1;
