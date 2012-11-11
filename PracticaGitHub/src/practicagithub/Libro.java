@@ -16,8 +16,13 @@ public class Libro extends Obra {
      * @param autoR
      * @param aO
      * @param pag
-     */
-    public Libro(String editor, String titu, String autoR, int aO,int pag)
+*/
+   public Libro()
+  {
+  
+  }
+ 
+  public Libro(String editor, String titu, String autoR, int aO,int pag)
 
     {
       this.editorial=editor;

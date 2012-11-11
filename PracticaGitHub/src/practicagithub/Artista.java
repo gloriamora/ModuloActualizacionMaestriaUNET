@@ -13,7 +13,12 @@ public class Artista {
     
   private String nombre;
   private int anoNacimiento;
+ 
+    public Artista()
+  {
   
+  }
+ 
   public Artista (String n, int a)
   {
    this.nombre=n;

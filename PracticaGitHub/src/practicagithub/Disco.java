@@ -8,6 +8,12 @@ package practicagithub;
  *
  * @author Gloria
  */
+
+
 public class Disco {
-    
+  public Disco()
+  {
+  
+  }
+     
 }
