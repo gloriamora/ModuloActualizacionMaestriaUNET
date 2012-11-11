@@ -357,10 +357,29 @@ public class PracticaGitHub {
                     }
                     if (sw!=1)
                       System.out.println("\n Los datos buscados no se encuentran cargados");
-                   
+                    }//busqueda del libro con la consulta editorial y paginas
                  
-                    
-                 }
+                 
+                  if(busquedad.equalsIgnoreCase("D"))       
+                 {                        
+                    System.out.println("Los Discos registrados son ");
+                    int Secuen1=0;
+                    for (int Z=0;Z<obritaD.length;Z++)
+                    {                   
+                       Secuen1=Secuen1+1;
+                       System.out.println("Discos "+obritaD[Z].getTitulo()+"----->"+Secuen1);  
+                    }
+                    System.out.println("\n Seleccione el titulo del Disco a busca por el numero que lo indica ");
+                    int posDisco;
+                    posDisco=Integer.parseInt(lectura.readLine());
+                    System.out.println("************************");
+                    System.out.println("Los Datos del disco son: ");
+                    System.out.println("Titulo "+obritaD[posDisco-1].getTitulo()+" Autor "+obritaD[posDisco-1].getAutor()+" Discografia "+obritaD[posDisco-1].getDiscografia()+" Nro Canciones "+obritaD[posDisco-1].getNCanciones());                 
+                    System.out.println("************************\n");
+                 
+                 }//fin de buscar disco con consulta discografia y canciones
+                 
+                 
                }//Fin del for
                      break;
            case 3:
