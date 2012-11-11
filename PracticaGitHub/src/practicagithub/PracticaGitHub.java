@@ -415,6 +415,7 @@ public class PracticaGitHub {
                 AutorP=xArtistas[posActorP-1].getNombre();  
                 System.out.println("El autor Seleccionado es : "+AutorP);   
                 break;
+               
            case 4:
                 System.out.println("Modulo en Construcción");    
                 break;
