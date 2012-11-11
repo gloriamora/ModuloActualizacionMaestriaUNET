@@ -25,8 +25,9 @@ public class PracticaGitHub {
     static String xNombre;
     static int xAnio;
     static Obra[] obritaL;
-    static String Ob="", Titulo, AutorO, editori;
-    static int nob=0, anoA=0,nro_obras=0, con_obras=0,npag=0;
+    static Disco[] obritaD;
+    static String Ob="", Titulo, AutorO, editori,discogra;
+    static int nob=0, anoA=0,nro_obras=0, con_obras=0,npag=0 , ncanc=0;     
     /**
      * @param args the command line arguments
      */
@@ -148,7 +149,9 @@ public class PracticaGitHub {
                 if(Ob.equalsIgnoreCase("L")) {
               obritaL = new Libro[nro_obras];
           }
-             
+                  if(Ob.equalsIgnoreCase("D")) {
+              obritaD = new Disco[nro_obras];
+          }
                 
                 con_obras=0;
                 for (int j=0;j<nro_obras;j++){
@@ -156,6 +159,7 @@ public class PracticaGitHub {
                 AutorO="";
                 anoA=0;
                 editori="";
+                discogra="";
                 con_obras=con_obras+1;
                 
                      System.out.print("Ingrese Datos del registro "+con_obras+ ": ");                
@@ -237,8 +241,43 @@ public class PracticaGitHub {
                 }while (npag==0);
                 
                 obritaL[j] = new Libro(editori, Titulo, AutorO, anoA,npag);
-               }
-               }
+               }//Fin del else Libros
+                    if(Ob.equalsIgnoreCase("D"))
+                    {
+                     do
+                     {
+                     System.out.println("\n Discografia : "); 
+                     try
+                     {
+                      discogra=lectura.readLine();  
+                     }
+                     catch (IOException e)
+                     {
+                     System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                     }    
+                    }while(discogra.equals(""));
+                     
+                do
+                {
+                System.out.println("Nro de Canciones");
+                try
+                {
+                ncanc=Integer.parseInt(lectura.readLine());
+                }
+                catch (IOException e)
+                    {
+                    System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                    }    
+                catch (NumberFormatException e)
+                    {
+                    System.out.println("Error: Debe ingresar un valor numerico");          
+                    }    
+                }while (ncanc==0);
+                obritaD[j] = new Disco(discogra, AutorO, ncanc , Titulo, anoA);             
+                    }
+               
+                   
+               }//Fin del for
 
                
  break;
