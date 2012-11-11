@@ -307,6 +307,7 @@ public class PracticaGitHub {
                     System.out.println("Los Datos del libro son:");
                     System.out.println("Titulo "+obritaL[posLibro-1].getTitulo()+" Autor "+obritaL[posLibro-1].getAutor()+" Editorial "+obritaL[posLibro-1].getEditorial()+" Nro Paginas "+obritaL[posLibro-1].getNPaginas());                 
                     System.out.println("************************\n");
+                    System.out.println("*************************************");
                     System.out.println("Consultar Editorial y Nro de Paginas ");
                     System.out.println("*************************************");
                     
@@ -342,13 +343,13 @@ public class PracticaGitHub {
                         }    
                     }while (nPagB==0);
                     
-                    int sw=0,Secuen=0;
+                    int sw=0,SecuenB=0;
                     for (int Z=0;Z<obritaL.length;Z++)
                     {                    
-                       Secuen=Secuen+1;
+                       SecuenB=SecuenB+1;
                        if(obritaL[Z].getEditorial().equals(Cedito) && obritaL[Z].getNPaginas()==nPagB)
                        {    
-                           System.out.println("Encontro el registro en la posicion "+Secuen+" el registro es: "); 
+                           System.out.println("Encontro el registro en la posicion "+SecuenB+" el registro es: "); 
                            System.out.println("Titulo "+obritaL[Z].getTitulo()+" Autor "+obritaL[Z].getAutor()+" Editorial "+obritaL[Z].getEditorial()+" Nro Paginas "+obritaL[Z].getNPaginas());                 
                            sw=1;
                        }
@@ -356,12 +357,12 @@ public class PracticaGitHub {
                     }
                     if (sw!=1)
                       System.out.println("\n Los datos buscados no se encuentran cargados");
-                    
-                 }
+                   
+                 
                     
                  }
                }//Fin del for
- break;
+                     break;
            case 3:
                 System.out.println("Modulo en Construcción");    
                 break;
