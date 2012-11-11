@@ -27,12 +27,14 @@ public class PracticaGitHub {
     static Libro[] obritaL;
     static Disco[] obritaD;
     static String Ob="", Titulo, AutorO, editori,discogra, busquedad="", productor, AutorP;
-    static int nob=0, anoA=0,nro_obras=0, con_obras=0,npag=0 , ncanc=0, nro_peliculas=0;     
+    static int nob=0, anoA=0,nro_obras=0, con_obras=0,npag=0 , ncanc=0, nro_peliculas=0, opcrepor=0;    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        
+        menuP();
+    }
+    public static void menuP() throws IOException {        
         // TODO code application logic here
          BufferedReader lectura = new BufferedReader(new InputStreamReader(System.in));
     int opcion,indice;
@@ -469,8 +471,9 @@ public class PracticaGitHub {
                 break;
                
            case 4:
-                System.out.println("Modulo en Construcción");    
-                break;
+                menuReportes();
+               break;
+    
            case 5:
                 System.out.println("Ha salido del sistema"); 
                 break;
@@ -480,6 +483,62 @@ public class PracticaGitHub {
      }while(opcion!=5);  
          
                
-        
     }
-}
+
+
+    public static void menuReportes() throws IOException 
+    {
+        // TODO code application logic here
+         BufferedReader lectura = new BufferedReader(new InputStreamReader(System.in));
+     
+    do
+      {   
+        opcrepor=0;
+
+        System.out.println("******* Opciones de los Reportes *******");
+        System.out.println("Generar Listado de Obras ---------------------------------->1");
+        System.out.println("Generar Listado de Peliculas ------------------------------>2");     
+        System.out.println("Busqueda de todas las Obras de un Autor (Nombre)  --------->3"); 
+        System.out.println("Busqueda de todas las Peliculas de un Autor (Nombre)------->4"); 
+        System.out.println("Regresar al menu principal--------------------------------->5"); 
+        System.out.println(""); 
+        System.out.print("Ingrese Opcion : ");             
+
+        try
+         {
+          opcrepor=Integer.parseInt(lectura.readLine());  
+         }
+        catch (IOException e)
+         {
+          System.out.println("Error: Se ha producido un error en la lectura de la opcion");          
+         }    
+        catch (NumberFormatException e)
+         {
+          System.out.println("Error: Debe ingresar un valor numerico ");          
+         }    
+
+        switch(opcrepor)
+         {
+            case 1:               
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+            {
+                menuP();
+                break;
+            }
+        }
+      }while(opcrepor!=5);
+    }//fin del menu    
+        
+} //fin clase 
+
+
+    
+    
+
