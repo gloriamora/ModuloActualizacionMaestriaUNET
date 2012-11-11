@@ -560,7 +560,64 @@ public class PracticaGitHub {
                 obritaP[jPel] = new Pelicula (Titulo, AutorP, anoP, productor,inter);
                 //
                }
+                 
+                   //busqueda de pelicula con todo los atributos
+                System.out.println("Las Peliculas registradas son ");
+                    int SecuenP=0;
+                    for (int Z=0;Z<obritaP.length;Z++)
+                    {                   
+                       SecuenP=SecuenP+1;
+                       System.out.println("Pelicula "+obritaP[Z].getTitulo()+"----->"+SecuenP);                     
+                    }
+                    System.out.println("\n Seleccione el titulo de la pelicula a busca por el numero que lo indica ");
+                    int posPelicu=0;
+                    posPelicu=Integer.parseInt(lectura.readLine());
+                    System.out.println("************************");
+                    System.out.println("Los Datos del pelicula son:");
+                    System.out.println("Titulo "+obritaP[posPelicu-1].getTitulo()+" Autor "+obritaP[posPelicu-1].getAutor()+" Productora "+obritaP[posPelicu-1].getProductora());                 
+                    
+                    for (int Z=0;Z<obritaP[posPelicu-1].getInterpretes().length;Z++)
+                    {                   
+                     System.out.println("Los Datos Interprete son:");
+                     System.out.println("Titulo "+obritaP[posPelicu-1].getInterpretes().toString());
+                    }
+                    
+                    System.out.println("************************\n");
+                 
+                    System.out.println("\n*************************************");
+                    System.out.println("Consultar Productora ");
+                    System.out.println("*************************************");
+                    
+                    String Conpro="";
+                     do
+                     {
+                     System.out.println("\n Ingrese La Productora: "); 
+                     try
+                     {
+                      Conpro=lectura.readLine();  
+                     }
+                     catch (IOException e)
+                     {
+                     System.out.println("Error: Se ha producido un error en la lectura del valor ingresado");          
+                     }    
+                    }while(Conpro.equals(""));
+                     
+                    int swP=0,SecuenBP=0;
+                    for (int Z=0;Z<obritaP.length;Z++)
+                    {                    
+                       SecuenBP=SecuenBP+1;
+                       if(obritaP[Z].getProductora().equals(Conpro))
+                       {    
+                           System.out.println("Encontro el registro en la posicion "+SecuenBP+" el registro es: "); 
+                           System.out.println("Titulo "+obritaP[Z].getTitulo()+" Autor "+obritaP[Z].getAutor()+" Productora "+obritaP[Z].getProductora()+" Interpretes "+obritaP[Z].getInterpretes());                 
+                           swP=1;
+                       }
+                         
+                    }
+                    if (swP!=1)
+                      System.out.println("\n Los datos buscados no se encuentran cargados");
                 break;
+          
            case 4:
                 menuReportes();
                break;
@@ -609,11 +666,39 @@ public class PracticaGitHub {
          }    
 
         switch(opcrepor)
-         {
-            case 1:               
+         { 
+            case 1:
+            { 
+                System.out.println("Listado de Libros ");
+                System.out.println("--------------------------------------------");
+                for (int Z=0;Z<obritaL.length;Z++) 
+                {
+                    System.out.println("Informacion Del Registro");
+                       obritaL[Z].imprimir();
+                       System.out.println("------------------------------------");
+                }
+                System.out.println("******************************************* ");
+                System.out.println("Listado de Discos ");
+                for (int Z=0;Z<obritaD.length;Z++) 
+                {
+                    System.out.println("Informacion Del Registro");
+                       obritaD[Z].imprimir();
+                       System.out.println("------------------------------------");
+                }
                 break;
+            }  
             case 2:
+            {
+              System.out.println("Listado de Peliculas ");
+                for (int Z=0;Z<obritaP.length;Z++) 
+                {
+                    System.out.println("Informacion Del Registro");
+                       obritaP[Z].imprimir();
+                       System.out.println("------------------------------------");
+                }
                 break;
+            }
+          
             case 3:
                 break;
             case 4:
