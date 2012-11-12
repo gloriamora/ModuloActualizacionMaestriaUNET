@@ -452,7 +452,7 @@ public class PracticaGitHub {
                         System.out.println("Error: Debe ingresar un valor numerico");          
                         }    
                     }while (nro_peliculas==0);
-                
+                Pelicula [] obritaP= new Pelicula [nro_peliculas]; 
                 int con_pelis=0, can_inter=0, pelis=0;
                  for(int jPel=0;jPel<nro_peliculas;jPel++){
                     pelis=jPel+1;
@@ -539,7 +539,7 @@ public class PracticaGitHub {
                         }    
                     }while (can_inter==0);
                    Artista [] inter = new Artista[can_inter]; 
-                   Pelicula [] obritaP= new Pelicula [nro_peliculas]; 
+                  
                 for (int oA=0;oA<can_inter;oA++)
                 {
                     inter [oA] = new Artista(); 
