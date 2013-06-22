@@ -29,6 +29,7 @@ public class PracticaGitHub {
     static Pelicula[] obritaP;
     static String Ob="", Titulo, AutorO, editori,discogra, busquedad="", productor, AutorP;
     static int nob=0, anoA=0,  nro_obras=0, con_obras=0,npag=0 , ncanc=0, nro_peliculas=0, anoP=0, opcrepor=0; 
+    int x;
     /**
      * @param args the command line arguments
      */
